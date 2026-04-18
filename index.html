@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Income Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <p class="eyebrow">Owner Snapshot</p>
+          <h1>Daily Income Dashboard</h1>
+          <p class="sidebar-copy">
+            A simple prototype for tracking multiple unrelated businesses in one place.
+          </p>
+        </div>
+
+        <div class="sidebar-card">
+          <p class="label">Today’s Combined Revenue</p>
+          <h2 id="totalDailyRevenue">$0</h2>
+          <p class="trend positive">▲ 6.8% vs yesterday</p>
+        </div>
+
+        <div class="sidebar-card">
+          <p class="label">Month-to-Date Revenue</p>
+          <h2 id="totalMonthlyRevenue">$0</h2>
+          <p class="muted">Across 5 business lines</p>
+        </div>
+
+        <div class="sidebar-card future-card">
+          <p class="label">Planned Next Step</p>
+          <p class="muted">
+            Expense entry can be added later as a second module without changing the dashboard layout.
+          </p>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <section class="top-bar">
+          <div>
+            <p class="eyebrow">Prototype View</p>
+            <h2>Business Performance Overview</h2>
+          </div>
+          <div class="date-pill">Sample data for April 18</div>
+        </section>
+
+        <section class="cards-grid" id="businessCards"></section>
+
+        <section class="charts-grid">
+          <div class="panel chart-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Infographic</p>
+                <h3>Today’s Revenue Mix</h3>
+              </div>
+              <p class="muted">Static chart powered by sample data</p>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="revenuePieChart"></canvas>
+            </div>
+          </div>
+
+          <div class="panel summary-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Ranked Summary</p>
+                <h3>Monthly Revenue by Business</h3>
+              </div>
+            </div>
+            <div id="monthlySummaryList" class="summary-list"></div>
+          </div>
+        </section>
+
+        <section class="panel notes-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Future Expansion</p>
+              <h3>Easy path to add expenses later</h3>
+            </div>
+          </div>
+          <div class="notes-grid">
+            <div class="note-box">
+              <h4>What’s shown now</h4>
+              <ul>
+                <li>Business names</li>
+                <li>Daily income</li>
+                <li>Monthly income</li>
+                <li>Total portfolio summary</li>
+              </ul>
+            </div>
+            <div class="note-box">
+              <h4>What can be added next</h4>
+              <ul>
+                <li>Expense input per business</li>
+                <li>Net profit calculations</li>
+                <li>Date filtering</li>
+                <li>CSV or spreadsheet import</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
